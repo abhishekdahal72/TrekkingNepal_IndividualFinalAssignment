@@ -9,7 +9,9 @@ class Header extends Component{
                 <Row>
                     <Col><a href= "/">Home</a>
                     <a href= "/register">Register</a>
-                    <a href= "/about">About</a></Col>
+                    <a href= "/about">About</a>
+                    <a href= "/login">Login</a>
+                    </Col>
                 </Row>
             </Container>
         )
