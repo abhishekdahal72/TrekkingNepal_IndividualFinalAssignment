@@ -15,7 +15,7 @@ class InsertNowShowing extends Component {
     description: '',
     imagepp: '',
     config: {
-      headers: { authorization: `Bearer $ {localStorage.getItem('token')}` },
+      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
     },
   };
 
@@ -42,7 +42,7 @@ class InsertNowShowing extends Component {
     data.append('description', this.state.description);
 
     axios
-      .post('http://localhost:90/movie/insert', data)
+      .post('http://localhost:90/movie/insert', data, this.state.config)
       .then((response) => {
         console.log(response);
       })

@@ -9,10 +9,13 @@ class SingleMovieData extends Component {
     release_date: '',
     description: '',
     imagepp: '',
-    comment: '',
+    comments: [],
     customerid: '',
     mid: '',
     id: this.props.match.params.id,
+    config: {
+      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
+    },
   };
   componentDidMount() {
     axios
@@ -28,6 +31,17 @@ class SingleMovieData extends Component {
       })
       .catch((err) => {
         console.log(err.response);
+      });
+    axios
+      .get('http://localhost:90/comment/' + this.state.id)
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          comments: response.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
 
@@ -47,7 +61,7 @@ class SingleMovieData extends Component {
     };
     console.log(data);
     axios
-      .post('http://localhost:90/customer/cmtinsert', data)
+      .post('http://localhost:90/customer/cmtinsert', data, this.state.config)
       .then()
       .catch((err) => {
         console.log(err);
@@ -89,20 +103,23 @@ class SingleMovieData extends Component {
           <Row>
             <Col className='UComment'>
               <h4>What you think about the movie? Comment down here!!</h4>
-
-              <Col className='UComment-details'>
-                <div className='Ucomment-head'>
-                  <img src={num1} alt='' />
-                  <p>Abhishek Dahal</p>
-                </div>
-                <div className='commented-area'>
-                  <p>
-                    Avengers: Endgame's cinematic release ran a whopping 182
-                    minutes - three hours and two minutes. The rerelease with
-                    extra footage is 188 minutes, or three hours and eight
-                    minutes. Please upload extended version... please{' '}
-                  </p>
-                </div>
+              {this.state.comments.map((comment) => {
+                return (
+                  <Col className='UComment-details'>
+                    <div className='Ucomment-head'>
+                      <img
+                        src={'http://localhost:90/images/' +comment.customerid.imagepp}
+                        alt=''
+                      />
+                      <p>{comment.customerid.fname}</p>
+                    </div>
+                    <div className='commented-area'>
+                      <p>{comment.comment}</p>
+                    </div>
+                  </Col>
+                );
+              })}
+              <Col>
                 <div className='comment-area col-lg-12'>
                   <Form>
                     <Form.Group controlId='formBasicEmail'>

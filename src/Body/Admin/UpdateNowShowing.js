@@ -8,6 +8,9 @@ class UpdateNowShowing extends Component {
     release_date: '',
     description: '',
     id: this.props.match.params.id,
+    config: {
+      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
+    },
   };
 
   changeHandler = (e) => {
@@ -35,7 +38,7 @@ class UpdateNowShowing extends Component {
   updateData = (e) => {
     e.preventDefault();
     axios
-      .put('http://localhost:90/movie/update', this.state)
+      .put('http://localhost:90/movie/update', this.state, this.state.config)
       .then((response) => {
         console.log(response);
       })
