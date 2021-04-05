@@ -1,9 +1,9 @@
 import { Component, state } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import num1 from '../media/endgame.jpg';
-import num2 from '../media/doctor-strange.jpg';
-import num3 from '../media/download.jpg';
-import num4 from '../media/rrr.jpg';
+import { Row, Col } from 'react-bootstrap';
+// import num1 from '../media/endgame.jpg';
+// import num2 from '../media/doctor-strange.jpg';
+// import num3 from '../media/download.jpg';
+// import num4 from '../media/rrr.jpg';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Route } from 'react-router-dom';

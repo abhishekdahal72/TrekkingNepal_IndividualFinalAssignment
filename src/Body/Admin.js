@@ -51,9 +51,7 @@ class Body extends Component {
         </Col>
       );
     }
-    return {
-      adminpage,
-    };
+    return <div>{adminpage}</div>;
   }
 }
 export default Body;

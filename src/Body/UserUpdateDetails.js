@@ -1,4 +1,10 @@
-import { Component, state, changeHandler, updateUserData } from 'react';
+import {
+  Component,
+  state,
+  changeHandler,
+  updateUserData,
+  fileHandler,
+} from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -13,11 +19,20 @@ class UserUpdateDetails extends Component {
     dob: '',
     imagepp: '',
     id: this.props.match.params.id,
+    config: {
+      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
+    },
   };
 
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+  };
+
+  fileHandler = (e) => {
+    this.setState({
+      imagepp: e.target.files[0],
     });
   };
 
@@ -44,7 +59,7 @@ class UserUpdateDetails extends Component {
   updateUserData = (e) => {
     e.preventDefault();
     axios
-      .put('http://localhost:90/customer/update', this.state)
+      .put('http://localhost:90/customer/update', this.state, this.state.config)
       .then((response) => {
         console.log(response);
       })
@@ -63,7 +78,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='text'
                 placeholder='Enter fname'
-                // value={this.state.title}
+                value={this.state.fname}
                 name='fname'
                 onChange={this.changeHandler}
               />
@@ -73,7 +88,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='date'
                 placeholder='Enter lname'
-                // value={this.state.release_date}
+                value={this.state.lname}
                 name='lname'
                 onChange={this.changeHandler}
               />
@@ -83,7 +98,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='text'
                 placeholder='Enter username'
-                // value={this.state.description}
+                value={this.state.username}
                 name='username'
                 onChange={this.changeHandler}
               />
@@ -92,7 +107,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='text'
                 placeholder='Enter address'
-                // value={this.state.description}
+                value={this.state.address}
                 name='address'
                 onChange={this.changeHandler}
               />
@@ -101,7 +116,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='text'
                 placeholder='Enter phone'
-                // value={this.state.description}
+                value={this.state.phone}
                 name='phone'
                 onChange={this.changeHandler}
               />
@@ -110,7 +125,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='text'
                 placeholder='Enter email'
-                // value={this.state.description}
+                value={this.state.email}
                 name='email'
                 onChange={this.changeHandler}
               />
@@ -119,7 +134,7 @@ class UserUpdateDetails extends Component {
               <Form.Control
                 type='date'
                 placeholder='Enter dob'
-                // value={this.state.description}
+                value={this.state.dob}
                 name='dob'
                 onChange={this.changeHandler}
               />
