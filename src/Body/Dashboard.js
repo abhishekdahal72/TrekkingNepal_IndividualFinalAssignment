@@ -1,11 +1,11 @@
 import { Component, state } from 'react';
 import { Col, Container, Row, Card, Table } from 'react-bootstrap';
 import axios from 'axios';
-import user from '../media/user.png';
+// import user from '../media/user.png';
 
 class Dashboard extends Component {
   state = {
-    user: [],
+    id: localStorage.getItem('userId'),
     fname: '',
     lname: '',
     username: '',
@@ -28,6 +28,9 @@ class Dashboard extends Component {
           username: response.data.username,
           email: response.data.email,
           imagepp: response.data.imagepp,
+          phone: response.data.phone,
+          address: response.data.address,
+          dob: response.data.dob,
         });
       })
       .catch((err) => {
@@ -40,8 +43,8 @@ class Dashboard extends Component {
         <Row>
           <Col md={4} sm={4} xs={12}>
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant='top' src={user} />
-              <a href={'/userupdate/' + user._id}>Update your profile</a>
+              <Card.Img variant='top' src='' />
+              <a href={'/userupdate/' + this.state.id}>Update your profile</a>
             </Card>
           </Col>
           <Col md={8} sm={4} xs={12}>
@@ -74,15 +77,15 @@ class Dashboard extends Component {
               <tbody>
                 <tr>
                   <td>Address</td>
-                  <td>Kapan</td>
+                  <td>{this.state.username}</td>
                 </tr>
                 <tr>
                   <td>Phone</td>
-                  <td>9841637462</td>
+                  <td>{this.state.phone}</td>
                 </tr>
                 <tr>
                   <td>Date of birth</td>
-                  <td>1999/06/23</td>
+                  <td>{this.state.dob}</td>
                 </tr>
               </tbody>
             </Table>

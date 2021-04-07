@@ -8,6 +8,7 @@ class Login extends Component {
     username: '',
     password: '',
     checklogin: false,
+    message:"",
   };
 
   getUserData = (e) => {
@@ -31,9 +32,16 @@ class Login extends Component {
       })
       .catch((err) => {
         console.log(err);
+        this.setState({
+          message: err.response.data.message,
+        });
       });
   };
   render() {
+    if (this.state.message) {
+      var message = this.state.message;
+    }
+
     if (this.state.checklogin === true) {
       return (window.location.href = '/');
     }
@@ -43,6 +51,7 @@ class Login extends Component {
           <div class='row align-items-center justify-content-center login-page'>
             <div class='col-md-7'>
               <h3 class='loginpage-heading'>Login Page</h3>
+              <p>{message}</p>
               <form action='#' method='post'>
                 <div class='form-group first'>
                   <label for='username'>Username</label>

@@ -16,8 +16,8 @@ class UserUpdateDetails extends Component {
     address: '',
     phone: '',
     email: '',
+    checkupdate:false,
     dob: '',
-    imagepp: '',
     id: this.props.match.params.id,
     config: {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -27,12 +27,6 @@ class UserUpdateDetails extends Component {
   changeHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
-    });
-  };
-
-  fileHandler = (e) => {
-    this.setState({
-      imagepp: e.target.files[0],
     });
   };
 
@@ -48,7 +42,6 @@ class UserUpdateDetails extends Component {
           phone: response.data.phone,
           email: response.data.email,
           dob: response.data.dob,
-          imagepp: response.data.imagepp,
         });
       })
       .catch((err) => {
@@ -62,6 +55,9 @@ class UserUpdateDetails extends Component {
       .put('http://localhost:90/customer/update', this.state, this.state.config)
       .then((response) => {
         console.log(response);
+        this.setState({
+          checkupdate: true,
+        });
       })
       .catch((err) => {
         console.log(err.response);
@@ -69,6 +65,10 @@ class UserUpdateDetails extends Component {
   };
 
   render() {
+    if (this.state.checkupdate === true) {
+      return (window.location.href = '/dashboard');
+    }
+
     return (
       <Row className='update-user-details'>
         <Col className='u-userdetails'>
@@ -86,7 +86,7 @@ class UserUpdateDetails extends Component {
 
             <Form.Group controlId='formBasicReleaseDate'>
               <Form.Control
-                type='date'
+                type='text'
                 placeholder='Enter lname'
                 value={this.state.lname}
                 name='lname'
@@ -137,13 +137,6 @@ class UserUpdateDetails extends Component {
                 value={this.state.dob}
                 name='dob'
                 onChange={this.changeHandler}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.File
-                id='exampleFormControlFile1'
-                name='imagepp'
-                onChange={this.fileHandler}
               />
             </Form.Group>
             <Button

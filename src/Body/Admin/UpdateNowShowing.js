@@ -7,6 +7,8 @@ class UpdateNowShowing extends Component {
     title: '',
     release_date: '',
     description: '',
+    checkupdate: false,
+    message: "",
     id: this.props.match.params.id,
     config: {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -41,15 +43,29 @@ class UpdateNowShowing extends Component {
       .put('http://localhost:90/movie/update', this.state, this.state.config)
       .then((response) => {
         console.log(response);
+        this.setState({
+          checkupdate: true,
+        });
       })
       .catch((err) => {
         console.log(err.response);
+        this.setState({
+          message: err.response.data.message,
+        });
       });
   };
 
   render() {
+    if (this.state.message) {
+      var message = this.state.message;
+    }
+
+    if (this.state.checkupdate === true) {
+      return (window.location.href = '/');
+    }
     return (
       <Row className='insert-nowshowing'>
+        <p>{ message }</p>
         <Col className='i-nowshowing'>
           <Form>
             <Form.Group controlId='formBasicTitle'>
