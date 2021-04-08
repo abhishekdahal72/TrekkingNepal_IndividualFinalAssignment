@@ -4,6 +4,8 @@ import { Row, Col, Tab, Nav } from 'react-bootstrap';
 import InsertNowShowing from './Admin/InsertNowShowing';
 import InsertTicketPrice from './Admin/InsertTicketPrice';
 import NowShowingShowAll from './Admin/NowShowingShowAll';
+import TicketDataShowAll from './Admin/TicketDataShowAll';
+import UpdateTicketPrice from './Admin/UpdateTicketPrice';
 import UserContactInfo from './Admin/UserContactInfo';
 
 class Body extends Component {
@@ -31,7 +33,10 @@ class Body extends Component {
                     <Nav.Link eventKey='third'>Insert Ticket Price</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey='fourth'>User Contact-info</Nav.Link>
+                    <Nav.Link eventKey='fourth'>Show Ticket Price</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey='fifth'>User Contact-info</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
@@ -48,6 +53,9 @@ class Body extends Component {
                     <InsertTicketPrice />
                   </Tab.Pane>
                   <Tab.Pane eventKey='fourth'>
+                    <TicketDataShowAll />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey='fifth'>
                     <UserContactInfo />
                   </Tab.Pane>
                 </Tab.Content>

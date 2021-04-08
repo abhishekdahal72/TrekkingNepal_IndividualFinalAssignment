@@ -1,8 +1,7 @@
 import React, { Component, state, deleteProduct } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Route, Link } from 'react-router-dom';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+//import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import UpdateNowShowing from './UpdateNowShowing';
 
 class NowShowingShowAll extends Component {
   state = {

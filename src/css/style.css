@@ -660,6 +660,11 @@ h5 {
   width: 280px;
 }
 
+.admin-ticket-page h3 {
+	float: left;
+	margin-bottom: 25px;
+}
+
 /* ------------------------Ticket page css ends--------------------------- */
 
 /* -------------------------------Login page code------------------------------ */
