@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { Container, Row, Col, Tab, Nav } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import { Row, Col, Tab, Nav } from 'react-bootstrap';
+//import { Route } from 'react-router-dom';
 import InsertNowShowing from './Admin/InsertNowShowing';
+import InsertTicketPrice from './Admin/InsertTicketPrice';
 import NowShowingShowAll from './Admin/NowShowingShowAll';
-import UpdateNowShowing from './Admin/UpdateNowShowing';
 import UserContactInfo from './Admin/UserContactInfo';
 
 class Body extends Component {
@@ -28,7 +28,10 @@ class Body extends Component {
                     <Nav.Link eventKey='second'>Now showing update</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey='third'>User Contact-info</Nav.Link>
+                    <Nav.Link eventKey='third'>Insert Ticket Price</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey='fourth'>User Contact-info</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
@@ -42,6 +45,9 @@ class Body extends Component {
                     <NowShowingShowAll />
                   </Tab.Pane>
                   <Tab.Pane eventKey='third'>
+                    <InsertTicketPrice />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey='fourth'>
                     <UserContactInfo />
                   </Tab.Pane>
                 </Tab.Content>

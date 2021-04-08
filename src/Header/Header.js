@@ -117,7 +117,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticketrates'>
+                    <a class='nav-link' aria-current='page' href='/ticket'>
                       Ticket Rates
                     </a>
                   </li>
@@ -251,7 +251,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticketrates'>
+                    <a class='nav-link' aria-current='page' href='/ticket'>
                       Ticket Rates
                     </a>
                   </li>
@@ -382,7 +382,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticketrates'>
+                    <a class='nav-link' aria-current='page' href='/ticket'>
                       Ticket Rates
                     </a>
                   </li>
@@ -404,9 +404,7 @@ class Header extends Component {
         </div>
       );
     }
-    return (
-      <div>{nav}</div>
-    );
+    return <div>{nav}</div>;
   }
 }
 export default Header;

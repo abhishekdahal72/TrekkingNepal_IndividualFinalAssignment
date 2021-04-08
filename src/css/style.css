@@ -610,11 +610,11 @@ h5 {
 /* --------------------------About page code start------------------------------- */
 
 .about-hall img {
-	width: 88%;
-	margin-left: 120px;
+  width: 88%;
+  margin-left: 120px;
 }
 
-.about-description{
+.about-description {
   margin-top: 50px;
 }
 
@@ -623,11 +623,11 @@ h5 {
 }
 
 .about-desc p {
-	text-align: justify;
-	margin-left: 130px;
+  text-align: justify;
+  margin-left: 130px;
 }
 
-.about-hall2 img{
+.about-hall2 img {
   float: right;
 }
 
@@ -636,6 +636,31 @@ h5 {
 } */
 
 /* -------------------------About page code ends----------------------------------- */
+
+/*------------------------------ Ticket page------------------------- */
+
+.ticket-page h3 {
+  float: left;
+}
+
+.ticket-rate {
+  margin-top: 60px;
+}
+
+.i-ticket {
+  background-color: #f93706;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.form-ticket {
+  width: 280px;
+}
+
+/* ------------------------Ticket page css ends--------------------------- */
 
 /* -------------------------------Login page code------------------------------ */
 

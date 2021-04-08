@@ -12,6 +12,7 @@ import UserUpdateDetails from './UserUpdateDetails';
 import Contact from './Contact';
 import UserContactInfo from './Admin/UserContactInfo';
 import About from './AboutPage';
+import TicketPage from './TicketPage';
 
 class Body extends Component {
   render() {
@@ -38,6 +39,7 @@ class Body extends Component {
 
           <Route path='/admincontactinfo' exact component={UserContactInfo} />
           <Route path='/about' exact component={About} />
+          <Route path='/ticket' exact component={TicketPage} />
         </Col>
       </div>
     );
