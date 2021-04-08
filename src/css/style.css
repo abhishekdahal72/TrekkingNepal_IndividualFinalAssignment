@@ -423,7 +423,6 @@ li a {
 }
 
 .UComment h4 {
-  float: left;
   color: white;
 }
 
@@ -458,6 +457,17 @@ li a {
   float: left;
   margin-left: 80px;
   margin-top: 25px;
+}
+
+.UComment li {
+  list-style: none;
+}
+
+.comment-details li p {
+  margin-top: 20px !important;
+  float: left;
+  margin-left: 86px;
+  color: white !important;
 }
 
 /* -------------------------------Single movie page ends -----------------------------*/
@@ -661,8 +671,8 @@ h5 {
 }
 
 .admin-ticket-page h3 {
-	float: left;
-	margin-bottom: 25px;
+  float: left;
+  margin-bottom: 25px;
 }
 
 /* ------------------------Ticket page css ends--------------------------- */

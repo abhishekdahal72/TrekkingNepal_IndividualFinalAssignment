@@ -7,6 +7,7 @@ import NowShowingShowAll from './Admin/NowShowingShowAll';
 import TicketDataShowAll from './Admin/TicketDataShowAll';
 import UpdateTicketPrice from './Admin/UpdateTicketPrice';
 import UserContactInfo from './Admin/UserContactInfo';
+import AdminProfile from './AdminProfile';
 
 class Body extends Component {
   render() {
@@ -42,7 +43,7 @@ class Body extends Component {
               </Col>
               <Col sm={9}>
                 <Tab.Content>
-                  <Tab.Pane eventKey='admin'>admin</Tab.Pane>
+                  <Tab.Pane eventKey='admin'><AdminProfile/></Tab.Pane>
                   <Tab.Pane eventKey='first'>
                     <InsertNowShowing />
                   </Tab.Pane>

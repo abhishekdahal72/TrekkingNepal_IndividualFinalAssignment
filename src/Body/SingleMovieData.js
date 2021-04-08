@@ -102,44 +102,52 @@ class SingleMovieData extends Component {
         <div className='user-comment'>
           <Row>
             <Col className='UComment'>
-              <h4>What you think about the movie? Comment down here!!</h4>
-              {this.state.comments.map((comment) => {
-                return (
-                  <Col className='UComment-details'>
-                    <div className='Ucomment-head'>
-                      <img
-                        src={'http://localhost:90/images/' +comment.customerid.imagepp}
-                        alt=''
-                      />
-                      <p>{comment.customerid.fname}</p>
-                    </div>
-                    <div className='commented-area'>
-                      <p>{comment.comment}</p>
+              <ul>
+                <li>
+                  <h4>What you think about the movie? Comment down here!!</h4>
+                </li><br/>
+                <li>
+                  {this.state.comments.map((comment) => {
+                    return (
+                      <Row>
+                        <Col className='comment-details'>
+                          <ul>
+                            <li>
+                              <p>{comment.customerid.fname}</p>
+                            </li>
+                            <li>
+                              <p>{comment.comment}</p>
+                            </li>
+                          </ul>
+                        </Col>
+                      </Row>
+                    );
+                  })}
+                </li>
+                <li>
+                  <Col>
+                    <div className='comment-area col-lg-12'>
+                      <Form>
+                        <Form.Group controlId='formBasicEmail'>
+                          <Form.Control
+                            type='text'
+                            placeholder='Write a comment..'
+                            name='comment'
+                            onChange={this.inputHandler}
+                          />
+                        </Form.Group>
+                        <Button
+                          variant='primary'
+                          type='submit'
+                          onClick={this.cusComment}
+                        >
+                          Comment
+                        </Button>
+                      </Form>
                     </div>
                   </Col>
-                );
-              })}
-              <Col>
-                <div className='comment-area col-lg-12'>
-                  <Form>
-                    <Form.Group controlId='formBasicEmail'>
-                      <Form.Control
-                        type='text'
-                        placeholder='Write a comment..'
-                        name='comment'
-                        onChange={this.inputHandler}
-                      />
-                    </Form.Group>
-                    <Button
-                      variant='primary'
-                      type='submit'
-                      onClick={this.cusComment}
-                    >
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </Col>
+                </li>
+              </ul>
             </Col>
           </Row>
         </div>
