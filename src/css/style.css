@@ -470,6 +470,20 @@ li a {
   color: white !important;
 }
 
+.movie-info li {
+  color: white !important;
+  list-style: none;
+}
+
+.movie-description h2,
+p {
+  color: white !important;
+}
+
+.ticketbook-title h1 {
+  color: white;
+}
+
 /* -------------------------------Single movie page ends -----------------------------*/
 
 /* -------------------------------User dashboard--------------------------------- */

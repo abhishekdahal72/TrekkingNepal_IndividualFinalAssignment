@@ -6,7 +6,7 @@ import { Row, Col } from 'react-bootstrap';
 // import num4 from '../media/rrr.jpg';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Route } from 'react-router-dom';
+//import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 class NowShowing extends Component {
@@ -44,7 +44,9 @@ class NowShowing extends Component {
                         {movie.title}
                       </a>
                     </Card.Title>
-                    <Button variant='primary'>Book Ticket</Button>
+                    <Button variant='primary' href={'/bookticket/' + movie._id}>
+                      Book Ticket
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>

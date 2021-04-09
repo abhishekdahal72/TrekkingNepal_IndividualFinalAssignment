@@ -1,7 +1,7 @@
 import { Component, state, inputHandler, cusComment } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import num1 from '../media/endgame.jpg';
+//import num1 from '../media/endgame.jpg';
 
 class SingleMovieData extends Component {
   state = {
