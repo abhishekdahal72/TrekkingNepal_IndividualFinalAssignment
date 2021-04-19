@@ -1,4 +1,10 @@
-import { Component, state, changeHandler, updateData } from 'react';
+import {
+  Component,
+  state,
+  changeHandler,
+  updateData,
+  message,
+} from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -8,7 +14,7 @@ class UpdateNowShowing extends Component {
     release_date: '',
     description: '',
     checkupdate: false,
-    message: "",
+    message: '',
     id: this.props.match.params.id,
     config: {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -54,20 +60,12 @@ class UpdateNowShowing extends Component {
         });
       });
   };
-
   render() {
-    if (this.state.message) {
-      var message = this.state.message;
-    }
-
-    if (this.state.checkupdate === true) {
-      return (window.location.href = '/');
-    }
     return (
       <Row className='insert-nowshowing'>
-        <p>{ message }</p>
         <Col className='i-nowshowing'>
           <Form>
+            <p>{message}</p>
             <Form.Group controlId='formBasicTitle'>
               <Form.Control
                 type='text'

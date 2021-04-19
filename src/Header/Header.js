@@ -8,7 +8,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap';
-import Logo from '../media/logo.png';
+import Logo from '../media/footer-logo.png';
 // import Sicon from '../media/select - icon.png';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -73,7 +73,7 @@ class Header extends Component {
                       </li>
                       <li>
                         <a href='/' className='insta'>
-                          <i class='fa fa-instagram'></i>
+                          <i class='fa fa-instagram intsa'></i>
                         </a>
                       </li>
                       <li>
@@ -266,7 +266,7 @@ class Header extends Component {
                     </a>
                   </li>
                   <li class='nav-item right'>
-                    <a class='nav-link' href='/dashboard'>
+                    <a class='nav-link' href='/userprofile'>
                       Dashboard
                     </a>
                   </li>

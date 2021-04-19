@@ -1,11 +1,13 @@
-import React, { Component, state, deleteProduct } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import React, { Component, state, deleteMovie } from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 //import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 class NowShowingShowAll extends Component {
   state = {
     movie: [],
+    message: "",
+    checkDelete: false,
     config: {
       headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
     },
@@ -24,19 +26,32 @@ class NowShowingShowAll extends Component {
       });
   }
 
-  deleteProduct = (mid) => {
-    axios
-      .delete('http://localhost:90/movie/delete/' + mid, this.state.config)
+  deleteMovie = (mid) => {
+    axios.delete("http://localhost:90/movie/delete/" + mid, this.state.config)
       .then((response) => {
-        console.log(response);
+        console.log(response)
+        this.setState({
+          checkDelete: true,
+          message: response.data.message
+        });
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err.response)
+        this.setState({
+          message: err.response.data.message
+        });
       });
   };
   render() {
+    if (this.state.message) {
+      var message = this.state.message;
+    }
+    if (this.state.checkupdate === true) {
+      return (window.location.href = '/ticketshowall');
+    }
     return (
       <Container>
+        <p>{message}</p>
         <div className='NowShowingUpdate'>
           <Row>
             {this.state.movie.map((movie) => {
@@ -51,6 +66,14 @@ class NowShowingShowAll extends Component {
                       <Card.Title>{movie.title}</Card.Title>
                       <a href={'/nowshowingupdate/' + movie._id}>Update</a>
                     </Card.Body>
+                    <Button
+                      className ="btn btn-danger"
+                      variant='primary'
+                      type='submit'
+                      onClick={this.deleteMovie.bind(this,movie._id)}
+                    >
+                      Delete
+                    </Button>
                   </Card>
                 </Col>
               );

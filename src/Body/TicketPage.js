@@ -8,7 +8,7 @@ class TicketPage extends Component {
   };
   componentDidMount() {
     axios
-      .get('http://localhost:90/ticket/fetch')
+      .get('http://localhost:90/ticket/webfetch')
       .then((response) => {
         console.log(response);
         this.setState({

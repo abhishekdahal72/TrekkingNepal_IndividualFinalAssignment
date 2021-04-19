@@ -1,6 +1,6 @@
 import { Component, state, sendUserData } from 'react';
 import axios from 'axios';
-import Register_Logo from '../media/register_logo.png';
+import Register_Logo from '../media/register-logo.png';
 
 class Register extends Component {
   state = {
@@ -137,7 +137,7 @@ class Register extends Component {
                       <span>
                         <span></span>
                       </span>
-                      I agree all statements in
+                      I agree all statements in &nbsp;
                       <a href='/' class='term-service'>
                         Terms of service
                       </a>
@@ -158,7 +158,7 @@ class Register extends Component {
                 <figure>
                   <img src={Register_Logo} alt='logo' />
                 </figure>
-                <a href='#' class='signup-image-link'>
+                <a href='/login' class='signup-image-link'>
                   I am already member
                 </a>
               </div>

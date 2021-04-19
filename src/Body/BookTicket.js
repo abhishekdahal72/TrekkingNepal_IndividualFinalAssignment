@@ -13,7 +13,10 @@ class BookTicket extends Component {
     date: '',
     time: '',
     username: '',
-    customerid: localStorage.getItem('uid'),
+    uid: localStorage.getItem('uid'),
+    config: {
+      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
+    },
   };
   componentDidMount() {
     axios
@@ -38,14 +41,22 @@ class BookTicket extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
   ticketBook = (e) => {
     e.preventDefault();
 
+    const data = {
+      username: this.state.username,
+      date: this.state.date,
+      time: this.state.time,
+      title: this.state.title,
+      uid: localStorage.getItem('userId'),
+      mid: this.props.match.params.id,
+    };
+    console.log(data);
     axios
-      .post('http://localhost:8080/ticketbook', this.state)
-      .then((response) => {
-        console.log(response);
-      })
+      .post('http://localhost:90/ticketbook', data, this.state.config)
+      .then()
       .catch((err) => {
         console.log(err.response);
       });
@@ -97,7 +108,7 @@ class BookTicket extends Component {
         <div class='container'>
           <div class='row py-5 mt-4 align-items-center'>
             <div class='col-md-12 pr-lg-5 mb-5 mb-md-0 ticketbook-title'>
-              <h1>Book {this.state.name}</h1>
+              <h1>Book: {this.state.title}</h1>
               <br />
             </div>
             <div class='col-md-12 col-lg-12 ml-auto'>
@@ -167,19 +178,19 @@ class BookTicket extends Component {
                   <button
                     className='btn btn-lg btn-primary btn-block mb-2 text-uppercase'
                     type='submit'
-                    onClick={this.futsalBook}
+                    onClick={this.ticketBook}
                   >
-                    Book Futsal
+                    Book Ticket
                   </button>
                   <form
                     action='https://uat.esewa.com.np/epay/main'
                     method='POST'
                   >
-                    <input value='100' name='tAmt' type='hidden' />
-                    <input value='90' name='amt' type='hidden' />
-                    <input value='5' name='txAmt' type='hidden' />
-                    <input value='2' name='psc' type='hidden' />
-                    <input value='3' name='pdc' type='hidden' />
+                    <input value='350' name='tAmt' type='hidden' />
+                    <input value='250' name='amt' type='hidden' />
+                    <input value='50' name='txAmt' type='hidden' />
+                    <input value='30' name='psc' type='hidden' />
+                    <input value='20' name='pdc' type='hidden' />
                     <input value='EPAYTEST' name='scd' type='hidden' />
                     <input
                       value='ee2c3ca1-696b-4cc5-a6be-2c40d929d453'

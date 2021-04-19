@@ -23,14 +23,14 @@ class Dashboard extends Component {
     axios('http://localhost:90/profile', this.state.config)
       .then((response) => {
         this.setState({
-          fname: response.data.fname,
-          lname: response.data.lname,
-          username: response.data.username,
-          email: response.data.email,
-          imagepp: response.data.imagepp,
-          phone: response.data.phone,
-          address: response.data.address,
-          dob: response.data.dob,
+          fname: response.data.data.fname,
+          lname: response.data.data.lname,
+          username: response.data.data.username,
+          email: response.data.data.email,
+          imagepp: response.data.data.imagepp,
+          phone: response.data.data.phone,
+          address: response.data.data.address,
+          dob: response.data.data.dob,
         });
       })
       .catch((err) => {

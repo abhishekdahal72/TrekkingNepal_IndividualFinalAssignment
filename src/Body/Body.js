@@ -16,6 +16,7 @@ import TicketPage from './TicketPage';
 import UpdateTicketPrice from './Admin/UpdateTicketPrice';
 import TicketDataShowAll from './Admin/TicketDataShowAll';
 import BookTicket from './BookTicket';
+import UserProfile from './UserProfile';
 
 class Body extends Component {
   render() {
@@ -46,6 +47,7 @@ class Body extends Component {
           <Route path='/ticketupdate/:id' exact component={UpdateTicketPrice} />
           <Route path='/ticketshowall' exact component={TicketDataShowAll} />
           <Route path='/bookticket/:id' exact component={BookTicket} />
+          <Route path='/userprofile' exact component={UserProfile} />
         </Col>
       </div>
     );
