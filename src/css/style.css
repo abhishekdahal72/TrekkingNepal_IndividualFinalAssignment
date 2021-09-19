@@ -98,14 +98,15 @@ hr.navdownhrline {
 }
 
 .logo img {
-  width: 185px;
+  width: 115px;
 }
 
 img {
   width: 70%;
   height: auto;
-  margin-top: 10px;
+  margin-top: -20px;
   margin-right: 50px;
+  float: left;
 }
 
 .navbar {
@@ -125,7 +126,7 @@ li a {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
@@ -158,6 +159,12 @@ li a {
 /*--------------------------------- nav end------------------------------------- */
 
 /* ---------------------------------Home Page------------------------------------- */
+.placename {
+  color: #000;
+}
+.singleplaceimg {
+  width: 100px !important;
+}
 
 .c-item {
   width: 100%;
@@ -274,8 +281,9 @@ li a {
 }
 
 .footer img {
-  width: 250px;
+  width: 266px;
   margin-left: 52px;
+  margin-top: -70px;
 }
 
 .footer-left li {
@@ -729,7 +737,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -965,8 +973,8 @@ h2 {
 }
 
 .control__indicator:after {
-  font-family: 'icomoon';
-  content: '\e5ca';
+  font-family: "icomoon";
+  content: "\e5ca";
   position: absolute;
   display: none;
   font-size: 16px;
@@ -1065,7 +1073,7 @@ textarea:focus {
   -ms-box-shadow: none !important;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   appearance: checkbox !important;
   -moz-appearance: checkbox !important;
   -webkit-appearance: checkbox !important;
@@ -1073,7 +1081,7 @@ input[type='checkbox'] {
   -ms-appearance: checkbox !important;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   appearance: radio !important;
   -moz-appearance: radio !important;
   -webkit-appearance: radio !important;
@@ -1231,7 +1239,7 @@ figure {
   width: 100%;
 }
 
-.signup-image-link{
+.signup-image-link {
   color: white;
 }
 
@@ -1243,11 +1251,11 @@ figure {
   margin-bottom: 0px;
 }
 
-.label-agree-term{
+.label-agree-term {
   color: white;
 }
 
-.label-agree-term a{
+.label-agree-term a {
   color: white;
 }
 
@@ -1273,8 +1281,8 @@ input:-moz-placeholder {
   color: #999;
 }
 .signup-image {
-	margin-top: 184px;
-	margin-right: 0;
+  margin-top: 184px;
+  margin-right: 0;
 }
 input:focus {
   border-bottom: 1px solid #222;
@@ -1292,7 +1300,7 @@ input:focus:-moz-placeholder {
   color: #222;
 }
 
-input[type='checkbox']:not(old) {
+input[type="checkbox"]:not(old) {
   width: 2em;
   margin: 0;
   padding: 0;
@@ -1300,13 +1308,13 @@ input[type='checkbox']:not(old) {
   display: none;
 }
 
-input[type='checkbox']:not(old) + label {
+input[type="checkbox"]:not(old) + label {
   display: inline-block;
   line-height: 1.5em;
   margin-top: 6px;
 }
 
-input[type='checkbox']:not(old) + label > span {
+input[type="checkbox"]:not(old) + label > span {
   display: inline-block;
   width: 13px;
   height: 13px;
@@ -1327,7 +1335,7 @@ input[type='checkbox']:not(old) + label > span {
   vertical-align: bottom;
 }
 
-input[type='checkbox']:not(old):checked + label > span {
+input[type="checkbox"]:not(old):checked + label > span {
   background-image: -moz-linear-gradient(white, white);
   background-image: -ms-linear-gradient(white, white);
   background-image: -o-linear-gradient(white, white);
@@ -1335,14 +1343,14 @@ input[type='checkbox']:not(old):checked + label > span {
   background-image: linear-gradient(white, white);
 }
 
-input[type='checkbox']:not(old):checked + label > span:before {
-  content: '\f26b';
+input[type="checkbox"]:not(old):checked + label > span:before {
+  content: "\f26b";
   display: block;
   color: #222;
   font-size: 11px;
   line-height: 1.2;
   text-align: center;
-  font-family: 'Material-Design-Iconic-Font';
+  font-family: "Material-Design-Iconic-Font";
   font-weight: bold;
 }
 

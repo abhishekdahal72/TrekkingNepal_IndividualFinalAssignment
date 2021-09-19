@@ -45,7 +45,7 @@ class Contact extends Component {
               </li>
               <li>
                 <h5>
-                  Welcome to Gopi Krishna Movies. Please contact us, if you guys
+                  Welcome to Trekking Nepal. Please contact us, if you guys
                   have any queries
                 </h5>
               </li>

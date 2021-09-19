@@ -1,12 +1,13 @@
 import { Component } from 'react';
-import { Row, Col, Tab, Nav } from 'react-bootstrap';
+import { Row, Col, Tab, Nav} from 'react-bootstrap';
 import Dashboard from './Dashboard';
+import ShowUserTicketBooked from './ShowUserTicketBooked';
 
 class UserProfile extends Component {
   render() {
       return (
         <Col className='admin'>
-          <h3>Admin Panel</h3>
+          <h3>User Panel</h3>
           <Tab.Container id='left-tabs-example' defaultActiveKey='user'>
             <Row className='admin-body'>
               <Col sm={3}>
@@ -25,7 +26,7 @@ class UserProfile extends Component {
                     <Dashboard />
                   </Tab.Pane>
                   <Tab.Pane eventKey='ticket'>
-                    <Dashboard />
+                    <ShowUserTicketBooked />
                   </Tab.Pane>
                 </Tab.Content>
               </Col>

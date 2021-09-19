@@ -1,6 +1,6 @@
 import { Component, state, sendUserData } from 'react';
 import axios from 'axios';
-import Register_Logo from '../media/register-logo.png';
+import Register_Logo from '../media/footer-logo.png';
 
 class Register extends Component {
   state = {

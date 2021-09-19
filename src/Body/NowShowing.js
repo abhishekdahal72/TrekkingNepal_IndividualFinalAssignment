@@ -1,21 +1,20 @@
-import { Component, state } from 'react';
-import { Row, Col } from 'react-bootstrap';
-// import num1 from '../media/endgame.jpg';
-// import num2 from '../media/doctor-strange.jpg';
-// import num3 from '../media/download.jpg';
-// import num4 from '../media/rrr.jpg';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-//import { Route } from 'react-router-dom';
-import axios from 'axios';
+import { Component, state } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import num1 from "../media/endgame.jpg";
+import num2 from "../media/doctor-strange.jpg";
+import num3 from "../media/download.jpg";
+import num4 from "../media/rrr.jpg";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
 
-class NowShowing extends Component {
+class NextChange extends Component {
   state = {
     movie: [],
   };
   componentDidMount() {
     axios
-      .get('http://localhost:90/movie/fetch')
+      .get("http://localhost:90/movie/fetch")
       .then((response) => {
         console.log(response);
         this.setState({
@@ -28,24 +27,24 @@ class NowShowing extends Component {
   }
   render() {
     return (
-      <div className='home-nowshowing'>
+      <div className="home-nextchange">
         <Row>
           {this.state.movie.map((movie) => {
             return (
               <Col md={3} sm={4} xs={12}>
-                <Card className='movie-card'>
+                <Card>
                   <Card.Img
-                    variant='top'
-                    src={'http://localhost:90/images/' + movie.imagepp}
+                    variant="top"
+                    src={"http://localhost:90/images/" + movie.imagepp}
                   />
                   <Card.Body>
                     <Card.Title>
-                      <a href={'/nssinglemoviedata/' + movie._id}>
+                      <a href={"/nssinglemoviedata/" + movie._id}>
                         {movie.title}
                       </a>
                     </Card.Title>
-                    <Button variant='primary' href={'/bookticket/' + movie._id}>
-                      Book Ticket
+                    <Button variant="primary" href={"/bookticket/" + movie._id}>
+                      See more
                     </Button>
                   </Card.Body>
                 </Card>
@@ -57,4 +56,4 @@ class NowShowing extends Component {
     );
   }
 }
-export default NowShowing;
+export default NextChange;

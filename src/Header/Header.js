@@ -1,5 +1,5 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Component, logout } from 'react';
+import { Component, logout } from "react";
 import {
   Container,
   Row,
@@ -7,24 +7,24 @@ import {
   Form,
   FormControl,
   Button,
-} from 'react-bootstrap';
-import Logo from '../media/footer-logo.png';
+} from "react-bootstrap";
+import Logo from "../media/footer-logo.png";
 // import Sicon from '../media/select - icon.png';
-import 'font-awesome/css/font-awesome.min.css';
+import "font-awesome/css/font-awesome.min.css";
 
 class Header extends Component {
   logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('id');
-    window.location.href = '/';
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    window.location.href = "/";
   };
   render() {
     if (
-      localStorage.getItem('token') &&
-      localStorage.getItem('userType') === 'admin'
+      localStorage.getItem("token") &&
+      localStorage.getItem("userType") === "admin"
     ) {
       var nav = (
-        <div className='container-fluid'>
+        <div className="container-fluid">
           {/* <Col>
                       <a href="/">Home</a>
                       <a href= "/register">Register</a>
@@ -32,53 +32,53 @@ class Header extends Component {
                       <a href= "/login">Login</a>
                   </Col> */}
           {/* -------- top header------- */}
-          <div className='header'>
+          <div className="header">
             {/* <!-- header phone --> */}
             <Col>
-              <div class='header-left'>
+              <div class="header-left">
                 <p>
-                  <i class='fa fa-phone'></i> +977-9813714762
+                  <i class="fa fa-phone"></i> +977-9813714762
                 </p>
               </div>
             </Col>
             {/* <!-- header phone end--> */}
 
             {/* <!-- header social media --> */}
-            <Col className='header-right'>
-              <Row className='rightheader-row'>
+            <Col className="header-right">
+              <Row className="rightheader-row">
                 <Col>
                   <Form inline>
                     <FormControl
-                      type='text'
-                      placeholder='Search'
-                      className='mr-sm-2 srch'
+                      type="text"
+                      placeholder="Search"
+                      className="mr-sm-2 srch"
                     />
-                    <Button variant='outline-success'>
+                    <Button variant="outline-success">
                       <i>
-                        <i class='fa fa-search'></i>
+                        <i class="fa fa-search"></i>
                       </i>
                     </Button>
                   </Form>
                 </Col>
-                <Col md='auto' className='userlogin'>
-                  <a href='/login'>Login</a>
+                <Col md="auto" className="userlogin">
+                  <a href="/login">Login</a>
                 </Col>
-                <Col xs lg='3'>
-                  <div className='social-media'>
+                <Col xs lg="3">
+                  <div className="social-media">
                     <ul>
                       <li>
-                        <a href='/' className='fb'>
-                          <i className='fa fa-facebook' />
+                        <a href="/" className="fb">
+                          <i className="fa fa-facebook" />
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='insta'>
-                          <i class='fa fa-instagram intsa'></i>
+                        <a href="/" className="insta">
+                          <i class="fa fa-instagram intsa"></i>
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='tweet'>
-                          <i class='fa fa-twitter'></i>
+                        <a href="/" className="tweet">
+                          <i class="fa fa-twitter"></i>
                         </a>
                       </li>
                     </ul>
@@ -88,60 +88,60 @@ class Header extends Component {
             </Col>
             {/* <!-- header social media end --> */}
           </div>
-          <hr className='navdownhrline' />
+          <hr className="navdownhrline" />
           {/*--------- top header ends-------- */}
           {/*------------- nav bar-------------- */}
-          <div className='nav'>
-            <div className='col-md-3'>
-              <div className='logo'>
-                <img src={Logo} alt='logo' />
+          <div className="nav">
+            <div className="col-md-3">
+              <div className="logo">
+                <img src={Logo} alt="logo" />
               </div>
             </div>
-            <div className='col-md-9'>
-              <nav class='navbar navbar-expand-lg'>
+            <div className="col-md-9">
+              <nav class="navbar navbar-expand-lg">
                 <button
-                  class='navbar-toggler'
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#navbarNav'
-                  aria-controls='navbarNav'
-                  aria-expanded='false'
-                  aria-label='Toggle navigation'
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
                 >
-                  <span class='navbar-toggler-icon'></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class='navbar-nav collapse navbar-collapse' id='navbarNav'>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/'>
+                <ul class="navbar-nav collapse navbar-collapse" id="navbarNav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">
                       Home
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticket'>
-                      Ticket Rates
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/ticket">
+                      Place Rates
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' href='/about'>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">
                       About
                     </a>
                   </li>
-                  <li class='nav-item right'>
-                    <a class='nav-link' href='/contact'>
+                  <li class="nav-item right">
+                    <a class="nav-link" href="/contact">
                       Contact Us
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/admin'>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/admin">
                       Admin
                     </a>
                   </li>
-                  <li class='nav-item'>
+                  <li class="nav-item">
                     <a
-                      class='nav-link'
+                      class="nav-link"
                       onClick={this.logout}
-                      aria-current='page'
-                      href='/'
+                      aria-current="page"
+                      href="/"
                     >
                       Logout
                     </a>
@@ -154,11 +154,11 @@ class Header extends Component {
         </div>
       );
     } else if (
-      localStorage.getItem('token') &&
-      localStorage.getItem('userType') === 'user'
+      localStorage.getItem("token") &&
+      localStorage.getItem("userType") === "user"
     ) {
       var nav = (
-        <div className='container-fluid'>
+        <div className="container-fluid">
           {/* <Col>
                       <a href="/">Home</a>
                       <a href= "/register">Register</a>
@@ -166,53 +166,53 @@ class Header extends Component {
                       <a href= "/login">Login</a>
                   </Col> */}
           {/* -------- top header------- */}
-          <div className='header'>
+          <div className="header">
             {/* <!-- header phone --> */}
             <Col>
-              <div class='header-left'>
+              <div class="header-left">
                 <p>
-                  <i class='fa fa-phone'></i> +977-9813714762
+                  <i class="fa fa-phone"></i> +977-9813714762
                 </p>
               </div>
             </Col>
             {/* <!-- header phone end--> */}
 
             {/* <!-- header social media --> */}
-            <Col className='header-right'>
-              <Row className='rightheader-row'>
+            <Col className="header-right">
+              <Row className="rightheader-row">
                 <Col>
                   <Form inline>
                     <FormControl
-                      type='text'
-                      placeholder='Search'
-                      className='mr-sm-2 srch'
+                      type="text"
+                      placeholder="Search"
+                      className="mr-sm-2 srch"
                     />
-                    <Button variant='outline-success'>
+                    <Button variant="outline-success">
                       <i>
-                        <i class='fa fa-search'></i>
+                        <i class="fa fa-search"></i>
                       </i>
                     </Button>
                   </Form>
                 </Col>
-                <Col md='auto' className='userlogin'>
-                  <a href='/login'>Login</a>
+                <Col md="auto" className="userlogin">
+                  <a href="/login">Login</a>
                 </Col>
-                <Col xs lg='3'>
-                  <div className='social-media'>
+                <Col xs lg="3">
+                  <div className="social-media">
                     <ul>
                       <li>
-                        <a href='/' className='fb'>
-                          <i className='fa fa-facebook' />
+                        <a href="/" className="fb">
+                          <i className="fa fa-facebook" />
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='insta'>
-                          <i class='fa fa-instagram'></i>
+                        <a href="/" className="insta">
+                          <i class="fa fa-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='tweet'>
-                          <i class='fa fa-twitter'></i>
+                        <a href="/" className="tweet">
+                          <i class="fa fa-twitter"></i>
                         </a>
                       </li>
                     </ul>
@@ -222,60 +222,60 @@ class Header extends Component {
             </Col>
             {/* <!-- header social media end --> */}
           </div>
-          <hr className='navdownhrline' />
+          <hr className="navdownhrline" />
           {/*--------- top header ends-------- */}
           {/*------------- nav bar-------------- */}
-          <div className='nav'>
-            <div className='col-md-3'>
-              <div className='logo'>
-                <img src={Logo} alt='logo' />
+          <div className="nav">
+            <div className="col-md-3">
+              <div className="logo">
+                <img src={Logo} alt="logo" />
               </div>
             </div>
-            <div className='col-md-9'>
-              <nav class='navbar navbar-expand-lg'>
+            <div className="col-md-9">
+              <nav class="navbar navbar-expand-lg">
                 <button
-                  class='navbar-toggler'
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#navbarNav'
-                  aria-controls='navbarNav'
-                  aria-expanded='false'
-                  aria-label='Toggle navigation'
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
                 >
-                  <span class='navbar-toggler-icon'></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class='navbar-nav collapse navbar-collapse' id='navbarNav'>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/'>
+                <ul class="navbar-nav collapse navbar-collapse" id="navbarNav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">
                       Home
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticket'>
-                      Ticket Rates
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/ticket">
+                      Place Rates
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' href='/about'>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">
                       About
                     </a>
                   </li>
-                  <li class='nav-item right'>
-                    <a class='nav-link' href='/contact'>
+                  <li class="nav-item right">
+                    <a class="nav-link" href="/contact">
                       Contact Us
                     </a>
                   </li>
-                  <li class='nav-item right'>
-                    <a class='nav-link' href='/userprofile'>
+                  <li class="nav-item right">
+                    <a class="nav-link" href="/userprofile">
                       Dashboard
                     </a>
                   </li>
-                  <li class='nav-item'>
+                  <li class="nav-item">
                     <a
-                      class='nav-link'
+                      class="nav-link"
                       onClick={this.logout}
-                      aria-current='page'
-                      href='/'
+                      aria-current="page"
+                      href="/"
                     >
                       Logout
                     </a>
@@ -289,7 +289,7 @@ class Header extends Component {
       );
     } else {
       var nav = (
-        <div className='container-fluid'>
+        <div className="container-fluid">
           {/* <Col>
                       <a href="/">Home</a>
                       <a href= "/register">Register</a>
@@ -297,53 +297,53 @@ class Header extends Component {
                       <a href= "/login">Login</a>
                   </Col> */}
           {/* -------- top header------- */}
-          <div className='header'>
+          <div className="header">
             {/* <!-- header phone --> */}
             <Col>
-              <div class='header-left'>
+              <div class="header-left">
                 <p>
-                  <i class='fa fa-phone'></i> +977-9813714762
+                  <i class="fa fa-phone"></i> +977-9813714762
                 </p>
               </div>
             </Col>
             {/* <!-- header phone end--> */}
 
             {/* <!-- header social media --> */}
-            <Col className='header-right'>
-              <Row className='rightheader-row'>
+            <Col className="header-right">
+              <Row className="rightheader-row">
                 <Col>
                   <Form inline>
                     <FormControl
-                      type='text'
-                      placeholder='Search'
-                      className='mr-sm-2 srch'
+                      type="text"
+                      placeholder="Search"
+                      className="mr-sm-2 srch"
                     />
-                    <Button variant='outline-success'>
+                    <Button variant="outline-success">
                       <i>
-                        <i class='fa fa-search'></i>
+                        <i class="fa fa-search"></i>
                       </i>
                     </Button>
                   </Form>
                 </Col>
-                <Col md='auto' className='userlogin'>
-                  <a href='/login'>Login</a>
+                <Col md="auto" className="userlogin">
+                  <a href="/login">Login</a>
                 </Col>
-                <Col xs lg='3'>
-                  <div className='social-media'>
+                <Col xs lg="3">
+                  <div className="social-media">
                     <ul>
                       <li>
-                        <a href='/' className='fb'>
-                          <i className='fa fa-facebook' />
+                        <a href="/" className="fb">
+                          <i className="fa fa-facebook" />
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='insta'>
-                          <i class='fa fa-instagram'></i>
+                        <a href="/" className="insta">
+                          <i class="fa fa-instagram"></i>
                         </a>
                       </li>
                       <li>
-                        <a href='/' className='tweet'>
-                          <i class='fa fa-twitter'></i>
+                        <a href="/" className="tweet">
+                          <i class="fa fa-twitter"></i>
                         </a>
                       </li>
                     </ul>
@@ -353,46 +353,46 @@ class Header extends Component {
             </Col>
             {/* <!-- header social media end --> */}
           </div>
-          <hr className='navdownhrline' />
+          <hr className="navdownhrline" />
           {/*--------- top header ends-------- */}
           {/*------------- nav bar-------------- */}
-          <div className='nav'>
-            <div className='col-md-3'>
-              <div className='logo'>
-                <img src={Logo} alt='logo' />
+          <div className="nav">
+            <div className="col-md-3">
+              <div className="logo">
+                <img src={Logo} alt="logo" />
               </div>
             </div>
-            <div className='col-md-9'>
-              <nav class='navbar navbar-expand-lg'>
+            <div className="col-md-9">
+              <nav class="navbar navbar-expand-lg">
                 <button
-                  class='navbar-toggler'
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#navbarNav'
-                  aria-controls='navbarNav'
-                  aria-expanded='false'
-                  aria-label='Toggle navigation'
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
                 >
-                  <span class='navbar-toggler-icon'></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class='navbar-nav collapse navbar-collapse' id='navbarNav'>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/'>
+                <ul class="navbar-nav collapse navbar-collapse" id="navbarNav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">
                       Home
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' aria-current='page' href='/ticket'>
-                      Ticket Rates
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/ticket">
+                      Place Rates
                     </a>
                   </li>
-                  <li class='nav-item'>
-                    <a class='nav-link' href='/about'>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">
                       About
                     </a>
                   </li>
-                  <li class='nav-item right'>
-                    <a class='nav-link' href='/contact'>
+                  <li class="nav-item right">
+                    <a class="nav-link" href="/contact">
                       Contact Us
                     </a>
                   </li>

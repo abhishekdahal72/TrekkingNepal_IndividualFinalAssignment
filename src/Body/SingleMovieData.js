@@ -1,25 +1,25 @@
-import { Component, state, inputHandler, cusComment } from 'react';
-import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+import { Component, state, inputHandler, cusComment } from "react";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import axios from "axios";
 //import num1 from '../media/endgame.jpg';
 
 class SingleMovieData extends Component {
   state = {
-    title: '',
-    release_date: '',
-    description: '',
-    imagepp: '',
+    title: "",
+    release_date: "",
+    description: "",
+    imagepp: "",
     comments: [],
-    customerid: '',
-    mid: '',
+    customerid: "",
+    mid: "",
     id: this.props.match.params.id,
     config: {
-      headers: { authorization: `Bearer ${localStorage.getItem('token')}` },
+      headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
     },
   };
   componentDidMount() {
     axios
-      .get('http://localhost:90/movie/single/' + this.state.id)
+      .get("http://localhost:90/movie/single/" + this.state.id)
       .then((response) => {
         console.log(response.data);
         this.setState({
@@ -33,7 +33,7 @@ class SingleMovieData extends Component {
         console.log(err.response);
       });
     axios
-      .get('http://localhost:90/comment/' + this.state.id)
+      .get("http://localhost:90/comment/" + this.state.id)
       .then((response) => {
         console.log(response);
         this.setState({
@@ -56,12 +56,12 @@ class SingleMovieData extends Component {
 
     const data = {
       comment: this.state.comment,
-      customerid: localStorage.getItem('userId'),
+      customerid: localStorage.getItem("userId"),
       mid: this.props.match.params.id,
     };
     console.log(data);
     axios
-      .post('http://localhost:90/customer/cmtinsert', data, this.state.config)
+      .post("http://localhost:90/customer/cmtinsert", data, this.state.config)
       .then()
       .catch((err) => {
         console.log(err);
@@ -71,26 +71,27 @@ class SingleMovieData extends Component {
   render() {
     return (
       <Container>
-        <div className='singlemoviedata'>
+        <div className="singlemoviedata">
           <Row>
-            <Col md={3} sm={4} xs={12}>
-              <Card className='movie-card'>
+            <Col xs lg="4">
+              <Card className="movie-card">
                 <Card.Img
-                  variant='top'
-                  src={'http://localhost:90/images/' + this.state.imagepp}
+                  className="singleplaceimg"
+                  variant="top"
+                  src={"http://localhost:90/images/" + this.state.imagepp}
                 />
-                <Card.Body className='singleMCardbody'>
+                <Card.Body className="singleMCardbody">
                   <Card.Title>{this.state.title}</Card.Title>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={9} sm={4} xs={12} className='SMovie-Data'>
+            <Col xs lg="8" className="SMovie-Data">
               <ul>
                 <li>
                   <h2>{this.state.title}</h2>
                 </li>
                 <li>
-                  <h5 className='release-date'>{this.state.release_date}</h5>
+                  <h5 className="release-date">{this.state.release_date}</h5>
                 </li>
                 <li>
                   <p>{this.state.description}</p>
@@ -99,18 +100,19 @@ class SingleMovieData extends Component {
             </Col>
           </Row>
         </div>
-        <div className='user-comment'>
+        <div className="user-comment">
           <Row>
-            <Col className='UComment'>
+            <Col className="UComment">
               <ul>
                 <li>
                   <h4>What you think about the movie? Comment down here!!</h4>
-                </li><br/>
+                </li>
+                <br />
                 <li>
                   {this.state.comments.map((comment) => {
                     return (
                       <Row>
-                        <Col className='comment-details'>
+                        <Col className="comment-details">
                           <ul>
                             <li>
                               <p>{comment.customerid.fname}</p>
@@ -126,19 +128,19 @@ class SingleMovieData extends Component {
                 </li>
                 <li>
                   <Col>
-                    <div className='comment-area col-lg-12'>
+                    <div className="comment-area col-lg-12">
                       <Form>
-                        <Form.Group controlId='formBasicEmail'>
+                        <Form.Group controlId="formBasicEmail">
                           <Form.Control
-                            type='text'
-                            placeholder='Write a comment..'
-                            name='comment'
+                            type="text"
+                            placeholder="Write a comment.."
+                            name="comment"
                             onChange={this.inputHandler}
                           />
                         </Form.Group>
                         <Button
-                          variant='primary'
-                          type='submit'
+                          variant="primary"
+                          type="submit"
                           onClick={this.cusComment}
                         >
                           Comment
